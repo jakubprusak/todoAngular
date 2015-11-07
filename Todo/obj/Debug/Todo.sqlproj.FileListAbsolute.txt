@@ -1,0 +1,9 @@
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\bin\Debug\Todo.dacpac
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\bin\Debug\Todo.dll
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\bin\Debug\Todo.pdb
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\Model.xml
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\refactor.xml
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\postdeploy.sql
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\predeploy.sql
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\Todo.dll
+c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\Todo.pdb
