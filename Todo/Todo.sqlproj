@@ -65,4 +65,7 @@
   <ItemGroup>
     <Build Include="Tables\Task.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Todo.publish.xml" />
+  </ItemGroup>
 </Project>
