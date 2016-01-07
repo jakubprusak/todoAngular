@@ -1,0 +1,113 @@
+﻿<div ng-app="crudModule">
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Moje zadania:</h2>
+
+    <table id="tblcontainer" ng-controller="crudController">
+        <tbody>
+            <tr>
+                <td>
+                    <table id="tblcrud">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>Id zadania</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="TaskId" readonly="readonly" ng-model="TaskId" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Nazwa zadania</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="Name" required ng-model="Name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Data dodania</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="DateAdd" readonly="readonly" ng-model="DateAdd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Kto utworzył</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="UserAddId" required ng-model="UserAddId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Do kogo przypięte zadanie</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="UserId" required ng-model="UserId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Czy zrobione</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="Done" required ng-model="Done">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" id="new" value="new" ng-click="clear()">
+                                </td>
+                                <td>
+                                    <input type="button" id="save" value="save" ng-click="save()">
+                                </td>
+                                <td>
+                                    <input type="button" id="delete" value="delete" ng-click="delete()">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>{{Message}}</div>
+                </td>
+                <td>
+                    <div id="dvcollection">
+                        <table id="tblcollections" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id zadania</th>
+                                    <th>Nazwa zadania</th>
+                                    <th>Data dodania</th>
+                                    <th>Kto utworzył</th>
+                                    <th>Do kogo przypięte zadanie</th>
+                                    <th>Czy zrobione</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="task in Tasks"
+                            <tr ng-click="get(task)">
+                                <td> <span>{{task.TaskId}}</span></td>
+                                <td> <span>{{task.Name}}</span></td>
+                                <td> <span>{{task.DateAdd}}</span></td>
+                                <td> <span>{{task.UserAddId}}</span></td>
+                                <td> <span>{{task.UserId}}</span></td>
+                                <td> <span>{{task.Done}}</span></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/ScriptsApp/Task/Module.js"></script>
+<script src="~/ScriptsApp/Task/Service.js"></script>
+<script src="~/ScriptsApp/Task/Controller.js"></script>

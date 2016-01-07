@@ -20,5 +20,7 @@ namespace ToDoAngular.Entities
         public int UserAddId { get; set; }
 
         public int UserId { get; set; }
+
+        public bool Done { get; set; }
     }
 }

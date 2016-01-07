@@ -7,3 +7,8 @@ c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\
 c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\refactor.xml
 c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\postdeploy.sql
 c:\users\jakub\documents\visual studio 2013\Projects\ToDoAngular\Todo\obj\Debug\predeploy.sql
+C:\repo\todoAngular\Todo\bin\Debug\Todo.dacpac
+C:\repo\todoAngular\Todo\bin\Debug\Todo.dll
+C:\repo\todoAngular\Todo\bin\Debug\Todo.pdb
+C:\repo\todoAngular\Todo\obj\Debug\Todo.dll
+C:\repo\todoAngular\Todo\obj\Debug\Todo.pdb

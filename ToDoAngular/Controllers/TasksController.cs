@@ -17,9 +17,11 @@ namespace ToDoAngular.Controllers
         private TodoModel db = new TodoModel();
 
         // GET: api/Tasks
-        public IQueryable<Task> GetTask()
+        public IQueryable<Task> GetTasksForUser()
         {
-            return db.Task;
+            var result =  db.Task.Where(a=> a.UserId == 1);
+
+            return result;
         }
 
         // GET: api/Tasks/5
