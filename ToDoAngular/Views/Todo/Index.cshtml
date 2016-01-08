@@ -42,7 +42,7 @@
                                     <span>Kto utworzył</span>
                                 </td>
                                 <td>
-                                    <input type="text" id="UserAddId" required ng-model="UserAddId">
+                                    {{Username}}
                                 </td>
                             </tr>
                             <tr>
@@ -50,7 +50,11 @@
                                     <span>Do kogo przypięte zadanie</span>
                                 </td>
                                 <td>
-                                    <input type="text" id="UserId" required ng-model="UserId">
+                                    <select id="UserId" ng-model="UserId" ng-options="item.UserId as item.Username for item in Users">
+                                        >
+
+                                    </select>
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -85,17 +89,15 @@
                                     <th>Nazwa zadania</th>
                                     <th>Data dodania</th>
                                     <th>Kto utworzył</th>
-                                    <th>Do kogo przypięte zadanie</th>
                                     <th>Czy zrobione</th>
                                 </tr>
                             </thead>
-                            <tbody ng-repeat="task in Tasks"
+                            <tbody ng-repeat="task in Tasks">
                             <tr ng-click="get(task)">
                                 <td> <span>{{task.TaskId}}</span></td>
                                 <td> <span>{{task.Name}}</span></td>
                                 <td> <span>{{task.DateAdd}}</span></td>
-                                <td> <span>{{task.UserAddId}}</span></td>
-                                <td> <span>{{task.UserId}}</span></td>
+                                <td> <span>{{task.UserAdd.Username}}</span></td>
                                 <td> <span>{{task.Done}}</span></td>
                             </tr>
                         </tbody>

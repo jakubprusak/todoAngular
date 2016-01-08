@@ -17,9 +17,9 @@ namespace ToDoAngular.Controllers
         private TodoModel db = new TodoModel();
 
         // GET: api/Tasks
-        public IQueryable<Task> GetTasksForUser()
+        public List<Task> GetTask()
         {
-            var result =  db.Task.Where(a=> a.UserId == 1);
+            var result =  db.Task.Include(a=> a.UserAdd).Where(a=> a.UserId == 1).ToList();
 
             return result;
         }
@@ -28,7 +28,7 @@ namespace ToDoAngular.Controllers
         [ResponseType(typeof(Task))]
         public IHttpActionResult GetTask(int id)
         {
-            Task task = db.Task.Find(id);
+            Task task = db.Task.Include(a=> a.UserAdd).FirstOrDefault(a=> a.TaskId == id);
             if (task == null)
             {
                 return NotFound();
@@ -80,6 +80,9 @@ namespace ToDoAngular.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            task.DateAdd = DateTime.Now;
+            task.UserAddId = 1;
 
             db.Task.Add(task);
             db.SaveChanges();

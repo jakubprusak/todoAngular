@@ -953,6 +953,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
+    <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

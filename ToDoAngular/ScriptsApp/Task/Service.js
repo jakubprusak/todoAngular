@@ -29,7 +29,7 @@ app.service('crudService', function ($http) {
     this.put = function (taskId, task) {
         var request = $http({
             method: "put",
-            url: "/api/Tasks/PutTask/" + taskId,
+            url: "/api/Tasks/" + taskId,
             data: task
         });
         return request;
@@ -38,8 +38,17 @@ app.service('crudService', function ($http) {
     this.delete = function (taskId) {
         var request = $http({
             method: "delete",
-            url: "/api/Tasks/DeleteTask/" + taskId
+            url: "/api/Tasks/" + taskId
         });
+        return request;
+    }
+
+    this.getUsersToPopulateDropdown = function() {
+        var request = $http({
+            method: 'GET',
+            url: '/api/UserApi/GetUsers'
+        });
+
         return request;
     }
 });

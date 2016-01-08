@@ -14,10 +14,31 @@ app.controller('crudController', function ($scope, crudService) {
     function loadRecords() {
         var promiseGet = crudService.GetTasksForUser(); //The MEthod Call from service
 
-        promiseGet.then(function (pl) { $scope.Tasks = pl.data },
+        var promiseGetUsers = crudService.getUsersToPopulateDropdown();
+
+        promiseGetUsers.then(function(pl) {
+                $scope.Users = pl.data
+            },
+            function(errorPl) {
+                $log.error('failure loading tasks', errorPl);
+            });
+
+        promiseGet.then(function(pl) {
+                 $scope.Tasks = pl.data
+            },
               function (errorPl) {
                   $log.error('failure loading tasks', errorPl);
               });
+    }
+
+    function clearFrom() {
+        $scope.IsNewRecord = 1;
+        $scope.TaskId = "";
+        $scope.Name = "";
+        $scope.DateAdd = "";
+        $scope.UserAddId = "";
+        $scope.UserId = "";
+        $scope.Done = false;
     }
 
     $scope.save = function () {
@@ -49,7 +70,7 @@ app.controller('crudController', function ($scope, crudService) {
             });
         }
 
-
+        clearFrom();
 
     };
 
@@ -58,12 +79,7 @@ app.controller('crudController', function ($scope, crudService) {
         var promiseDelete = crudService.delete($scope.TaskId);
         promiseDelete.then(function (pl) {
             $scope.Message = "Deleted Successfuly";
-            $scope.TaskId = 0;
-            $scope.Name = "";
-            $scope.DateAdd = "";
-            $scope.UserAddId = 0;
-            $scope.UserId = 0;
-            $scope.Done = false;
+            $scope.IsNewRecord = 1;
             loadRecords();
         }, function (err) {
             console.log("Err" + err);
@@ -82,7 +98,7 @@ app.controller('crudController', function ($scope, crudService) {
             $scope.UserAddId = res.UserAddId;
             $scope.UserId = res.UserId;
             $scope.Done = res.Done;
-
+            $scope.Username = res.UserAdd.Username
             $scope.IsNewRecord = 0;
         },
                   function (errorPl) {
@@ -91,13 +107,6 @@ app.controller('crudController', function ($scope, crudService) {
     }
     //Clear the Scopr models
     $scope.clear = function () {
-        $scope.IsNewRecord = 1;
-        $scope.TaskId = 0;
-        $scope.EmpName = "";
-        $scope.Name = 0;
-        $scope.DateAdd = "";
-        $scope.UserAddId = 0;
-        $scope.UserId = 0;
-        $scope.Done = false;
+        clearFrom();
     }
 });

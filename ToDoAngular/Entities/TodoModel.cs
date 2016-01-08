@@ -13,6 +13,7 @@ namespace ToDoAngular.Entities
         }
 
         public virtual DbSet<Task> Task { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

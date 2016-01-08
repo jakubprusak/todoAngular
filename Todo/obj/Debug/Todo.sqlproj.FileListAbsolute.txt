@@ -12,3 +12,8 @@ C:\repo\todoAngular\Todo\bin\Debug\Todo.dll
 C:\repo\todoAngular\Todo\bin\Debug\Todo.pdb
 C:\repo\todoAngular\Todo\obj\Debug\Todo.dll
 C:\repo\todoAngular\Todo\obj\Debug\Todo.pdb
+C:\git\todoAngular\Todo\bin\Debug\Todo.dacpac
+C:\git\todoAngular\Todo\bin\Debug\Todo.dll
+C:\git\todoAngular\Todo\bin\Debug\Todo.pdb
+C:\git\todoAngular\Todo\obj\Debug\Todo.dll
+C:\git\todoAngular\Todo\obj\Debug\Todo.pdb
