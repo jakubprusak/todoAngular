@@ -76,10 +76,6 @@ namespace ToDoAngular.Controllers
         [ResponseType(typeof(Task))]
         public IHttpActionResult PostTask(Task task)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
             task.DateAdd = DateTime.Now;
             task.UserAddId = 1;

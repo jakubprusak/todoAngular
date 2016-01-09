@@ -58,6 +58,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Todo.refactorlog" />
@@ -65,8 +66,13 @@
   <ItemGroup>
     <Build Include="Tables\Task.sql" />
     <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Role.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Todo.publish.xml" />
+    <None Include="Scripts\RoleData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

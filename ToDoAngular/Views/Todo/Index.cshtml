@@ -1,4 +1,5 @@
-﻿<div ng-app="crudModule">
+﻿@using ToDoAngular.Entities
+<div ng-app="crudModule">
 
 @{
     ViewBag.Title = "Index";
@@ -37,26 +38,32 @@
                                     <input type="text" id="DateAdd" readonly="readonly" ng-model="DateAdd">
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <span>Kto utworzył</span>
-                                </td>
-                                <td>
-                                    {{Username}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>Do kogo przypięte zadanie</span>
-                                </td>
-                                <td>
-                                    <select id="UserId" ng-model="UserId" ng-options="item.UserId as item.Username for item in Users">
-                                        >
+                        <tr>
+                            <td>
+                                <span>Kto utworzył</span>
+                            </td>
+                            <td>
+                                {{Username}}
+                            </td>
+                        </tr>
+                           @{
+                               var currentUser = (User)Session["User"];
+                               if (currentUser.RoleId == Role.Supervisor)
+                               {
+                                <tr>
+                                    <td>
+                                        <span>Do kogo przypięte zadanie</span>
+                                    </td>
+                                    <td>
+                                        <select id="UserId" ng-model="UserId" ng-options="item.UserId as item.Username for item in Users">
+                                            >
 
-                                    </select>
-                                    
-                                </td>
-                            </tr>
+                                        </select>
+
+                                    </td>
+                                </tr>
+                               }
+                        }
                             <tr>
                                 <td>
                                     <span>Czy zrobione</span>

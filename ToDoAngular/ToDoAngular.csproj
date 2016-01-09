@@ -166,6 +166,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -954,6 +955,8 @@
     <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
