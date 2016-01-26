@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using ToDoAngular.Entities;
@@ -19,7 +20,9 @@ namespace ToDoAngular.Controllers
         // GET: api/Tasks
         public List<Task> GetTask()
         {
-            var result =  db.Task.Include(a=> a.UserAdd).Where(a=> a.UserId == 1).ToList();
+            var userFromSession = (User)HttpContext.Current.Session["User"];
+
+            var result =  db.Task.Include(a=> a.UserAdd).Where(a=> a.UserId == userFromSession.UserId).ToList();
 
             return result;
         }
@@ -76,9 +79,9 @@ namespace ToDoAngular.Controllers
         [ResponseType(typeof(Task))]
         public IHttpActionResult PostTask(Task task)
         {
-
+            var userFromSession = (User)HttpContext.Current.Session["User"];
             task.DateAdd = DateTime.Now;
-            task.UserAddId = 1;
+            task.UserAddId = userFromSession.UserId;
 
             db.Task.Add(task);
             db.SaveChanges();

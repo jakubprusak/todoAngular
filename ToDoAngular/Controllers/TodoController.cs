@@ -11,6 +11,10 @@ namespace ToDoAngular.Controllers
         // GET: Todo
         public ActionResult Index()
         {
+            if (Session["User"] == null)
+            {
+                RedirectToAction("Logon", "User");
+            }
             return View();
         }
     }
