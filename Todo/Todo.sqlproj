@@ -67,10 +67,12 @@
     <Build Include="Tables\Task.sql" />
     <Build Include="Tables\User.sql" />
     <Build Include="Tables\Role.sql" />
+    <None Include="master.dbo.sp_generate_merge.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Todo.publish.xml" />
     <None Include="Scripts\RoleData.sql" />
+    <None Include="Scripts\UserData.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />

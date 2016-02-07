@@ -11,4 +11,5 @@ Post-Deployment Script Template
 */
 
 
---:r ../Scripts/RoleData.sql
+:r ./Scripts/RoleData.sql
+:r ./Scripts/UserData.sql

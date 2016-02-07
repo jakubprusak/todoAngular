@@ -82,6 +82,8 @@ namespace ToDoAngular.Controllers
             var userFromSession = (User)HttpContext.Current.Session["User"];
             task.DateAdd = DateTime.Now;
             task.UserAddId = userFromSession.UserId;
+            if (task.UserId == 0)//Employee tries to add task
+                task.UserId = userFromSession.UserId;
 
             db.Task.Add(task);
             db.SaveChanges();

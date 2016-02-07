@@ -17,3 +17,7 @@ C:\git\todoAngular\Todo\bin\Debug\Todo.dll
 C:\git\todoAngular\Todo\bin\Debug\Todo.pdb
 C:\git\todoAngular\Todo\obj\Debug\Todo.dll
 C:\git\todoAngular\Todo\obj\Debug\Todo.pdb
+C:\repo\todoAngular\Todo\obj\Debug\Model.xml
+C:\repo\todoAngular\Todo\obj\Debug\refactor.xml
+C:\repo\todoAngular\Todo\obj\Debug\postdeploy.sql
+C:\repo\todoAngular\Todo\obj\Debug\predeploy.sql

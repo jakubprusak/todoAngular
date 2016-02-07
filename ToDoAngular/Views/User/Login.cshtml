@@ -12,9 +12,10 @@
 
             <div class="panel-body">
                 <form role="form"  method="POST">
-                    <div class="alert alert-danger">
-                        <a class="close" data-dismiss="alert" href="#">×</a>@Html.ValidationSummary(false)
-                    </div>
+                    @Html.ValidationSummary(false)
+                    @*<div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                    </div>*@
                     <div style="margin-bottom: 12px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         @Html.TextBoxFor(a=> a.Username, new { @class="form-control"})
